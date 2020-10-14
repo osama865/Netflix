@@ -1,5 +1,6 @@
 import React , {useContext, useState} from 'react'
 import { createContext } from 'react';
+import OptFormContainer from '../../containers/opt-form';
 import {Title , Frame , Header , Item , Body , Container , Inner, Icon } from './styles/accordion'
 
 const ToggleContext = createContext();
@@ -7,8 +8,11 @@ const ToggleContext = createContext();
 export default function Accordion ({children , ...restProps}){
     return (
         <Container {...restProps} >
-            <Inner>{children}</Inner>
-        </Container>
+            <Inner>
+                {children}
+                <OptFormContainer/>
+            </Inner>
+        </Container> 
     )
 }
 
