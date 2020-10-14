@@ -1,6 +1,5 @@
-import * as firebase from 'firebase/app';
-
-import 'firebase-firestore';
+import Firebase from 'firebase/app';
+import 'firebase/firebase-firestore';
 import 'firebase/auth';
 import { seedDatabase } from '../seed';
 
@@ -14,7 +13,7 @@ const config = {
   appId: '1:152879675205:web:682072ae38e3819622b02c',
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebase = Firebase.initializeApp(config);
 
 seedDatabase(firebase);
 export { firebase };

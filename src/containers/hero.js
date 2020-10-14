@@ -7,8 +7,8 @@ export default function HeroContainer({ children }) {
     <>
       <Hero>
         <Hero.Frame>
-          <Hero.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
-          <Hero.ButtonLink to={ROUTES.SIGN_IN}>Sign In</Hero.ButtonLink>
+          <Hero.Logo to="/" src={logo} alt="Netflix" />
+          <Hero.ButtonLink to="/signin">Sign In</Hero.ButtonLink>
         </Hero.Frame>
         {children}
       </Hero>
