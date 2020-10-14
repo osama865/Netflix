@@ -35,7 +35,7 @@ export const Item = styled.div`
   margin-bottom: 10px;
   border-bottom: 4px
   margin: auto;
-  max-width: 670px;
+  max-width: 720px;
   width: 100%;
 
   &:first-of-type {
@@ -87,7 +87,7 @@ export const Body = styled.div`
   }
 `;
 
-export const Icon = styled.img `
+export const Icon = styled.img`
 filter: brightness(0) invert(1);
     width: 24px;
 
