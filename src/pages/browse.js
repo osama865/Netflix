@@ -1,4 +1,5 @@
 import React from 'react';
+import BrowseContainer from '../containers/browse';
 import { useContent } from '../hooks';
 import selectionMap from '../utils/selection-map';
 
@@ -11,9 +12,5 @@ export default function Browse() {
   // slides
   const slides = selectionMap({ series, films });
   console.log(slides);
-  return (
-    <div>
-      <p>hello from browse</p>
-    </div>
-  );
+  return <BrowseContainer slides={slides} />;
 }
