@@ -71,3 +71,6 @@ export default function SignIn() {
     </>
   );
 }
+
+// git remote add origin https://github.com/osama865/Netflix.git
+// git push -u origin master
