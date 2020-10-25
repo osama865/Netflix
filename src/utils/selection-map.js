@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function selectionMap({ series, films }) {
+export default function selectionMap({ series, films } = []) {
   return {
     series: [
       {

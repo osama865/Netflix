@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Link as ReactRouterLink } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import {
   Background,
   Logo,
@@ -16,6 +16,7 @@ import {
   SearchIcon,
   SearchInput,
   PlayButton,
+  Link,
 } from './styles/hero';
 export default function Hero({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
