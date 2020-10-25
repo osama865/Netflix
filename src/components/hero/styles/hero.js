@@ -32,7 +32,7 @@ export const Container = styled.div`
 `;
 
 export const Link = styled.p`
-  color: #fff;
+  color: white;
   text-decoration: none;
   margin-right: 30px;
   font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};

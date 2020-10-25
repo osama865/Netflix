@@ -32,7 +32,7 @@ export default function BrowseContainer({ slides }) {
             <Hero.TextLink>films</Hero.TextLink>
           </Hero.Group>
           <Hero.Group>
-            <Header.Search
+            <Hero.Search
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
@@ -43,17 +43,46 @@ export default function BrowseContainer({ slides }) {
                   <Hero.Picture src={user.photoURL} />
                   <Hero.TextLink>{user.displayName}</Hero.TextLink>
                 </Hero.Group>
-                <Hero.TextLink
-                  onClick={() => {
-                    firebase.auth().signOut();
-                  }}
-                >
-                  Sign Out
-                </Hero.TextLink>
+                <Hero.Group>
+                  <Hero.TextLink onClick={() => firebase.auth().signOut()}>
+                    Sign Out
+                  </Hero.TextLink>
+                </Hero.Group>
               </Hero.Dropdown>
             </Hero.Profile>
           </Hero.Group>
         </Hero.Frame>
+        {/* <Hero.Frame>
+          <Hero.Group>
+            <Hero.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
+            <Hero.TextLink>series</Hero.TextLink>
+            <Hero.TextLink>films</Hero.TextLink>
+          </Hero.Group>
+          <Hero.Group>
+            <Hero.Search
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+            <Hero.Profile>
+              <Hero.Picture src={user.photoURL} />
+              <Hero.Dropdown>
+                <Hero.Group>
+                  <Hero.Picture src={user.photoURL} />
+                  <Hero.TextLink>{user.displayName}</Hero.TextLink>
+                </Hero.Group>
+                <Hero.Group>
+                  <Hero.TextLink
+                    onClick={() => {
+                      firebase.auth().signOut();
+                    }}
+                  >
+                    Sign Out
+                  </Hero.TextLink>
+                </Hero.Group>
+              </Hero.Dropdown>
+            </Hero.Profile>
+          </Hero.Group>
+        </Hero.Frame> */}
 
         <Hero.Feature>
           <Hero.FeatureCallOut>Watch joker now</Hero.FeatureCallOut>
@@ -64,6 +93,7 @@ export default function BrowseContainer({ slides }) {
             he projects in a futile attempt to feel like he's part of the world
             around him.
           </Hero.Text>
+          <Hero.PlayButton>Play</Hero.PlayButton>
         </Hero.Feature>
       </Hero>
     </>

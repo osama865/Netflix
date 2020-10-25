@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
 import { FirebaseContext } from '../context/firebase';
+
 export default function useContent(target) {
   const [content, setContent] = useState([]);
   const { firebase } = useContext(FirebaseContext);
 
   useEffect(() => {
+    let isMounted = true;
     firebase
       .firestore()
       .collection(target)
@@ -17,7 +19,7 @@ export default function useContent(target) {
         setContent(allContent);
       })
       .catch((error) => {
-        console.error();
+        // console.error();
         console.log(error.message);
       });
   }, []);

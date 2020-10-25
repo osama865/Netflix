@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Link as ReactRouterLink } from 'react-router-dom';
 import {
   Background,
@@ -15,8 +15,8 @@ import {
   Search,
   SearchIcon,
   SearchInput,
+  PlayButton,
 } from './styles/hero';
-
 export default function Hero({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
 }
@@ -57,8 +57,8 @@ Hero.ButtonLink = function HeroButtonLink({ children, ...restProps }) {
   return <ButtonLink {...restProps}>{children}</ButtonLink>;
 };
 
-Hero.Picture = function HeroPicture({ children, ...restProps }) {
-  return <Picture {...restProps}>{children}</Picture>;
+Hero.Picture = function HeroPicture({ src, ...restProps }) {
+  return <Picture {...restProps} src={`/images/users/${src}.png`} />;
 };
 
 Hero.ButtonLink = function HeroButtonLink({ children, ...restProps }) {
@@ -73,14 +73,14 @@ Hero.Profile = function HeroProfile({ children, ...restProps }) {
   return <Profile {...restProps}>{children}</Profile>;
 };
 
-Hero.SearchTerm = function HeroSearchTerm({
-  searchTerm,
-  setSearchTerm,
-  ...restProps
-}) {
+Hero.PlayButton = function HeroPlayButton({ children, ...restProps }) {
+  return <PlayButton {...restProps}>{children}</PlayButton>;
+};
+
+Hero.Search = function HeroSearch({ searchTerm, setSearchTerm, ...restProps }) {
   const [searchActiv, setSearchActiv] = useState(false);
   return (
-    <Search>
+    <Search {...restProps}>
       <SearchIcon onClick={() => setSearchActiv((searchActiv) => !searchActiv)}>
         <img src="/images/icons/search.png" alt="Search" />
       </SearchIcon>
